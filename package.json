@@ -1,18 +1,21 @@
 {
   "name": "test",
   "version": "1.0.0",
-  "description": "",
+  "description": "A list of time zones\r https://en.wikipedia.org/wiki/List_of_tz_database_time_zones",
   "main": "index.js",
   "scripts": {
     "serve": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "canvas": "^2.11.0",
+    "dotenv": "^16.5.0",
     "express": "^4.18.2",
     "gifencoder": "^2.0.1",
+    "nodemailer": "^7.0.3",
     "request": "^2.88.2"
   },
   "devDependencies": {
