@@ -23,14 +23,14 @@ const transporter = mailer.createTransport({
 });
 
 const mailOptions = {
-  from: process.env.GMAIL_USER,
-  to: "jazzadam71@gmail.com",
+  from: "jazzadam71@gmail.com",
+  to: "vishwa10032003@gmail.com",
   subject: "HTML Email with GIF 🎉",
   html: `
     <div style="font-family: Arial, sans-serif; text-align: center;">
       <h2>Hello from NodeMailer 👋</h2>
       <p>This email includes a cool animated GIF!</p>
-      <img src="http://localhost:${process.env.PORT}/countdown?t=${1747787366}" alt="Celebration GIF" style="width:300px; border-radius: 10px;"/>
+      <img src="https://0115-2401-4900-88b2-41e9-5c53-f7c2-4788-ed/countdown?t=${1747787366}" alt="Celebration GIF" style="width:300px; border-radius: 10px;"/>
       <p style="margin-top: 20px;">Enjoy! 🚀</p>
     </div>
   `
@@ -45,6 +45,7 @@ app.get('/mail',async(req,res)=>{
       return console.log("Error:", error);
     }
     console.log("Email sent:", info.response);
+    res.json({ message: "Email sent successfully!" });
   });
 })
 
