@@ -30,7 +30,7 @@ const mailOptions = {
     <div style="font-family: Arial, sans-serif; text-align: center;">
       <h2>Hello from NodeMailer 👋</h2>
       <p>This email includes a cool animated GIF!</p>
-      <img src="https://0115-2401-4900-88b2-41e9-5c53-f7c2-4788-ed/countdown?t=${1747787366}" alt="Celebration GIF" style="width:300px; border-radius: 10px;"/>
+      <img src="${process.env.RAILWAY_PUBLIC_DOMAIN}/countdown?t=${1747787366}" alt="Celebration GIF" style="width:300px; border-radius: 10px;"/>
       <p style="margin-top: 20px;">Enjoy! 🚀</p>
     </div>
   `
