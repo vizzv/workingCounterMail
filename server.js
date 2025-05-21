@@ -35,12 +35,12 @@ const mailOptions = {
     </div>
   `
 };
-app.get('/',async(req,res)=>{
-  res.json({"message":"Home"});
+app.get('/', async (req, res) => {
+  res.json({ "message": "Home" });
 })
 
-app.get('/mail',async(req,res)=>{
-   transporter.sendMail(mailOptions, (error, info) => {
+app.get('/mail', async (req, res) => {
+  transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       return console.log("Error:", error);
     }
@@ -57,17 +57,20 @@ app.get('/countdown', async (req, res) => {
   }
 
   try {
-    const gifPath = await getCachedOrGenerateGif(t);
+      const gifBuffer = await getCachedOrGenerateGif(t);
 
-  res.set({
+  res.setHeader('Content-Type', 'image/gif');
+  
+
+    res.set({
       'Cache-Control': 'no-cache, no-store, must-revalidate, post-check=0, pre-check=0, max-age=0',
       'Content-Type': 'image/gif',
       'Pragma': 'no-cache',
       'Expires': '-1'
-  });
+    });
 
-    const stream = fs.createReadStream(gifPath);
-    stream.pipe(res);
+
+    res.send(gifBuffer);
   } catch (err) {
     console.error('❌ Error generating or retrieving GIF:', err);
     res.status(500).send('Internal Server Error');
