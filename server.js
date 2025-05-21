@@ -36,7 +36,7 @@ const mailOptions = {
   `
 };
 app.get('/',async(req,res)=>{
-  res.write("Home");
+  res.json({"message":"Home"});
 })
 
 app.get('/mail',async(req,res)=>{
