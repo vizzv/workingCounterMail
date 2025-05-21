@@ -2,9 +2,8 @@
   "name": "test",
   "version": "1.0.0",
   "description": "A list of time zones\r https://en.wikipedia.org/wiki/List_of_tz_database_time_zones",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "serve": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
